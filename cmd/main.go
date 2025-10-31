@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
 	handler := http.NewServeMux()
@@ -11,6 +14,8 @@ func main() {
 		Addr:    "0.0.0.0:8000",
 		Handler: handler,
 	}
+	fmt.Println("Starting server on :8000")
+	fmt.Println("Open http://localhost:8000")
 
 	server.ListenAndServe()
 }
